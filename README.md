@@ -6,6 +6,16 @@ This web component to display simple pie-charts or donut-charts
 
 ## Usage
 
+<!--
+```
+<custom-element-demo>
+  <template>
+    <link rel="import" href="index.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
 ```html
 <wc-pie-chart id="existing"
               thickness="0.1">
