@@ -1,27 +1,10 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/wc-pie-chart)
+
 # <wc-pie-chart>
 
-This web component to display simple pie- or donut-charts
+This web component to display simple pie-charts or donut-charts
 
 ## Usage
-
-<!--
-```
-<custom-element-demo>
-  <template>
-    <wc-pie-chart id="existing" thickness="0.1">
-      <wc-pie-slice value="5"
-                    color="#E64C65"/>
-      <wc-pie-slice value="5"
-                    color="#11A8AB"/>
-      <wc-pie-slice value="5"
-                    color="#394264"/>
-    </wc-pie-chart>
-    <script type="module"
-            src="https://unpkg.com/wc-pie-chart/wc-pie-chart.js"></script>
-  </template>
-</custom-element-demo>
-```
--->
 
 ```html
 <wc-pie-chart id="existing"
