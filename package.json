@@ -1,0 +1,28 @@
+{
+  "name": "wc-pie-chart",
+  "version": "1.0.2",
+  "description": "This web component to display simple pie- or donut-charts",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"No test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annoyingmouse/wc-pie-chart.git"
+  },
+  "keywords": [
+    "pie-chart",
+    "donut-chart",
+    "web-component"
+  ],
+  "author": "Dominic Myers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/annoyingmouse/wc-pie-chart/issues"
+  },
+  "homepage": "https://github.com/annoyingmouse/wc-pie-chart#readme",
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  }
+}
