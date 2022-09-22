@@ -1,6 +1,6 @@
 {
   "name": "wc-pie-chart",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This web component to display simple pie- or donut-charts",
   "main": "wc-pie-chart.js",
   "scripts": {
