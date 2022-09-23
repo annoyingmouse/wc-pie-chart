@@ -7,7 +7,7 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
   input: './wc-pie-chart.js',
   output: {
-    file: 'dist/wc-pie-chart-min.js',
+    file: 'dist/wc-pie-chart.min.js',
     format: 'iife', // immediately-invoked function expression — suitable for <script> tags
     sourcemap: true
   },
