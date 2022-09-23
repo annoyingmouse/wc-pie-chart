@@ -4,7 +4,8 @@
   "description": "This web component to display simple pie- or donut-charts",
   "main": "wc-pie-chart.js",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "test": "echo \"No test specified\"",
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,9 @@
   "prettier": {
     "singleQuote": true,
     "semi": false
+  },
+  "devDependencies": {
+    "rollup": "^2.36.2",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }
