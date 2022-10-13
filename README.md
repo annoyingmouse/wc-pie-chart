@@ -3,6 +3,8 @@
 # <wc-pie-chart>
 
 This web component to display simple pie-charts or donut-charts
+  
+Demo here: https://codepen.io/annoyingmouse/pen/XWqOeqw
 
 ## Usage
 
