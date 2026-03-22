@@ -47,6 +47,23 @@ Adding `thickness` will alter the width of the slices from the default of 20% of
 
 ## Data
 
-The chart relies upon one or more compulsory `<wc-pie-slices>`s; these have to have a `value` and optionally can have a `color` attribute (a random colour will be assigned if no colour is provided)
+The chart relies upon one or more compulsory `<wc-pie-slice>`s; these have to have a `value` and optionally can have a `color` attribute (a random colour will be assigned if no colour is provided).
+
+Adding a `label` attribute to each `<wc-pie-slice>` improves accessibility — the labels are included in the auto-generated description read by screen readers:
+
+```html
+<wc-pie-chart>
+  <wc-pie-slice value="5" label="Sales"     color="#E64C65"></wc-pie-slice>
+  <wc-pie-slice value="3" label="Support"   color="#11A8AB"></wc-pie-slice>
+  <wc-pie-slice value="2" label="Marketing" color="#394264"></wc-pie-slice>
+</wc-pie-chart>
+```
+
+## Accessibility
+
+- `role="img"` and an `aria-label` are set automatically. The label summarises the chart data (e.g. `"Pie chart with 3 slices: Sales 50.0%, Support 30.0%, Marketing 20.0%"`). Supply your own `aria-label` on `<wc-pie-chart>` to override it.
+- The chart is keyboard-focusable by default (`tabindex="0"`). A focus indicator is shown for keyboard users; set `tabindex="-1"` on the element to opt out.
+- Animations respect the `prefers-reduced-motion` OS/browser setting — slices appear immediately at full size when reduced motion is preferred.
+- Because colour is the only visual differentiator between slices, choose colours with sufficient contrast against one another and against the background. The `label` attribute and auto-generated `aria-label` cover assistive-technology users, but sighted colour-blind users depend on accessible colour choices.
 
 

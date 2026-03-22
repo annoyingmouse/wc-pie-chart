@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>&lt;wc-pie-chart&gt;</title>
     <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
@@ -18,13 +18,16 @@
     <p>Please remember to change <code>[WHATEVER CDN]</code> to your favourite <abbr title="Content Delivery Network">CDN</abbr></p>
     <h2>Examples</h2>
     <h3>Basic Example (my original colours)</h3>
+    <p>Each slice has a <code>label</code> attribute — this is included in the auto-generated <code>aria-label</code> read by screen readers.</p>
+    <pre><code>&lt;wc-pie-chart duration="3000"&gt;
+  &lt;wc-pie-slice value="5" label="Red"  color="#E64C65"&gt;&lt;/wc-pie-slice&gt;
+  &lt;wc-pie-slice value="5" label="Teal" color="#11A8AB"&gt;&lt;/wc-pie-slice&gt;
+  &lt;wc-pie-slice value="5" label="Navy" color="#394264"&gt;&lt;/wc-pie-slice&gt;
+&lt;/wc-pie-chart&gt;</code></pre>
     <wc-pie-chart duration="3000">
-      <wc-pie-slice value="5"
-                    color="#E64C65"/>
-      <wc-pie-slice value="5"
-                    color="#11A8AB"/>
-      <wc-pie-slice value="5"
-                    color="#394264"/>
+      <wc-pie-slice value="5" label="Red"  color="#E64C65"/>
+      <wc-pie-slice value="5" label="Teal" color="#11A8AB"/>
+      <wc-pie-slice value="5" label="Navy" color="#394264"/>
     </wc-pie-chart>
     <h3>This has its attributes changed via JS in an external file.</h3>
     <p>In one case we increase the thickness to <code>0.5</code> to create a pie-chart, rather than a donut-chart.</p>
@@ -36,12 +39,9 @@
     </wc-pie-chart>
     <h3>Another basic example</h3>
     <wc-pie-chart width="500">
-      <wc-pie-slice value="1"
-                    color="red"/>
-      <wc-pie-slice value="1.5"
-                    color="green"/>
-      <wc-pie-slice value="6"
-                    color="blue"/>
+      <wc-pie-slice value="1"   label="Red"   color="red"/>
+      <wc-pie-slice value="1.5" label="Green" color="green"/>
+      <wc-pie-slice value="6"   label="Blue"  color="blue"/>
     </wc-pie-chart>
     <h3>This is an empty div which is populated with this script:</h3>
     <pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#800000; font-weight:bold; '>test</span> <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>test</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
@@ -68,8 +68,37 @@ greys<span style='color:#808030; '>.</span><span style='color:#800000; font-weig
 <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
 </pre>
     <wc-pie-chart id="grey"></wc-pie-chart>
+    <h2>Accessibility</h2>
+    <h3>Auto-generated <code>aria-label</code></h3>
+    <p>
+      When <code>label</code> attributes are present on slices, the component builds a description automatically.
+      Inspect this element to see the generated <code>aria-label</code> and <code>role="img"</code>.
+    </p>
+    <pre><code>&lt;wc-pie-chart&gt;
+  &lt;wc-pie-slice value="42" label="Cats"  color="#E64C65"&gt;&lt;/wc-pie-slice&gt;
+  &lt;wc-pie-slice value="31" label="Dogs"  color="#11A8AB"&gt;&lt;/wc-pie-slice&gt;
+  &lt;wc-pie-slice value="27" label="Other" color="#394264"&gt;&lt;/wc-pie-slice&gt;
+&lt;/wc-pie-chart&gt;
+&lt;!-- Produces: aria-label="Pie chart with 3 slices: Cats 42.0%, Dogs 31.0%, Other 27.0%" --&gt;</code></pre>
+    <wc-pie-chart>
+      <wc-pie-slice value="42" label="Cats"  color="#E64C65"/>
+      <wc-pie-slice value="31" label="Dogs"  color="#11A8AB"/>
+      <wc-pie-slice value="27" label="Other" color="#394264"/>
+    </wc-pie-chart>
+    <h3>Custom <code>aria-label</code></h3>
+    <p>Supply your own <code>aria-label</code> on <code>&lt;wc-pie-chart&gt;</code> to override the auto-generated one — useful when you want to describe the chart's meaning rather than its raw data.</p>
+    <pre><code>&lt;wc-pie-chart aria-label="Favourite pets survey, 100 respondents"&gt;
+  &lt;wc-pie-slice value="42" label="Cats"  color="#E64C65"&gt;&lt;/wc-pie-slice&gt;
+  &lt;wc-pie-slice value="31" label="Dogs"  color="#11A8AB"&gt;&lt;/wc-pie-slice&gt;
+  &lt;wc-pie-slice value="27" label="Other" color="#394264"&gt;&lt;/wc-pie-slice&gt;
+&lt;/wc-pie-chart&gt;</code></pre>
+    <wc-pie-chart aria-label="Favourite pets survey, 100 respondents">
+      <wc-pie-slice value="42" label="Cats"  color="#E64C65"/>
+      <wc-pie-slice value="31" label="Dogs"  color="#11A8AB"/>
+      <wc-pie-slice value="27" label="Other" color="#394264"/>
+    </wc-pie-chart>
 <!--    <script type="module" src="https://unpkg.com/wc-pie-chart/wc-pie-chart.js"></script>-->
-    <script type="module" src="./dist/wc-pie-chart-min.js"></script>
+    <script type="module" src="./wc-pie-chart.js"></script>
 <!--    <script type="module" src="https://cdn.skypack.dev/wc-pie-chart/wc-pie-chart.js"></script>-->
     <script src="main.js"></script>
   </body>

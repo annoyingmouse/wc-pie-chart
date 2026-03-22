@@ -6,7 +6,13 @@ class WCPieChart extends HTMLElement {
     return `
       <style>
         :host {
-          --width: ${this.width} 
+          --width: ${this.width};
+          display: inline-block;
+        }
+        :host(:focus-visible) {
+          outline: 2px solid ButtonText;
+          outline-offset: 3px;
+          border-radius: 50%;
         }
         * {
           box-sizing: border-box;
@@ -21,7 +27,7 @@ class WCPieChart extends HTMLElement {
   constructor() {
     super()
     this.shadow = this.attachShadow({
-      mode: 'closed',
+      mode: 'open',
     })
     this.shadow.innerHTML = `${this.style}<div></div>`
     try {
@@ -52,6 +58,7 @@ class WCPieChart extends HTMLElement {
       let durationTotal = this.delay
       let rotationTotal = 0
       const totalDegree = 360 / total
+      const labelParts = []
       segments.forEach((segment) => {
         const value = Number(segment.getAttribute('value'))
         const currentRotation = totalDegree * value
@@ -66,10 +73,24 @@ class WCPieChart extends HTMLElement {
         rotationTotal += currentRotation
         durationTotal += animationDuration
         this.div.append(segment)
+        const pct = ((value / total) * 100).toFixed(1)
+        const label = segment.getAttribute('label')
+        labelParts.push(label ? `${label} ${pct}%` : `${pct}%`)
       })
+      const currentLabel = this.getAttribute('aria-label')
+      if (!currentLabel || currentLabel === this._generatedLabel) {
+        this._generatedLabel = `Pie chart with ${segments.length} slice${segments.length !== 1 ? 's' : ''}: ${labelParts.join(', ')}`
+        this.setAttribute('aria-label', this._generatedLabel)
+      }
     }
   }
   connectedCallback() {
+    if (!this.hasAttribute('role')) {
+      this.setAttribute('role', 'img')
+    }
+    if (!this.hasAttribute('tabindex')) {
+      this.setAttribute('tabindex', '0')
+    }
     this.div = this.shadow.querySelector('div')
     this.segments = [...this.querySelectorAll('wc-pie-slice')]
     this.render()
@@ -97,7 +118,7 @@ class WCPieChart extends HTMLElement {
 
 class WCPieSlice extends HTMLElement {
   static get observedAttributes() {
-    return ['width', 'duration', 'delay', 'color', 'thickness', 'rotate']
+    return ['width', 'duration', 'delay', 'color', 'thickness', 'rotate', 'label']
   }
   get style() {
     return `
@@ -113,12 +134,7 @@ class WCPieSlice extends HTMLElement {
           position: absolute;
           left: 50%;
           top: 50%;
-          animation-name: p;
-          animation-fill-mode: both;
-          animation-timing-function: ease-in-out;
           transform: translate(-50%, -50%);
-          animation-duration: ${this.duration}ms;
-          animation-delay: ${this.delay}ms;
         }
         div:before {
           content: "";
@@ -129,9 +145,18 @@ class WCPieSlice extends HTMLElement {
           -webkit-mask: radial-gradient(farthest-side, transparent calc(99% - ${this.thickness}px), #000 calc(100% - ${this.thickness}px));
           mask: radial-gradient(farthest-side, transparent calc(99% - ${this.thickness}px), #000 calc(100% - ${this.thickness}px));
         }
-        @keyframes p {
-          from {
-            --p: 0;
+        @media (prefers-reduced-motion: no-preference) {
+          div {
+            animation-name: p;
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+            animation-duration: ${this.duration}ms;
+            animation-delay: ${this.delay}ms;
+          }
+          @keyframes p {
+            from {
+              --p: 0;
+            }
           }
         }
       </style>
@@ -140,7 +165,7 @@ class WCPieSlice extends HTMLElement {
   constructor() {
     super()
     this.shadow = this.attachShadow({
-      mode: 'closed',
+      mode: 'open',
     })
     this.specifiedColour = this.color
   }
@@ -173,6 +198,9 @@ class WCPieSlice extends HTMLElement {
   }
   get end() {
     return Number(this.getAttribute('end'))
+  }
+  get label() {
+    return this.getAttribute('label')
   }
   get getRandomColor() {
     const letters = '0123456789ABCDEF'
