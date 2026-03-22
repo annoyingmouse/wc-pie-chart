@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
     <title>&lt;wc-pie-chart&gt;</title>
     <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
   </head>
   <body>
+  <main>
     <h1>&lt;wc-pie-chart&gt;</h1>
     <h2>Installation</h2>
-    <pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://unpkg.com/wc-pie-chart/wc-pie-chart.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+    <pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#666600;'>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#666600;'>=</span><span style='color:#0000e6; '>"https://unpkg.com/wc-pie-chart/wc-pie-chart.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
 </pre>
     <p>Alternatively</p>
-    <pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://cdn.skypack.dev/wc-pie-chart/wc-pie-chart.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+    <pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#666600;'>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#666600;'>=</span><span style='color:#0000e6; '>"https://cdn.skypack.dev/wc-pie-chart/wc-pie-chart.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
 </pre>
     <p>After the next release you can use it minified by adding using this instead:</p>
-    <pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"[WHATEVER CDN]/wc-pie-chart/dist/wc-pie-chart.min.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
+    <pre style='color:#000000;background:#ffffff;'><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>type</span><span style='color:#666600;'>=</span><span style='color:#0000e6; '>"module"</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#666600;'>=</span><span style='color:#0000e6; '>"[WHATEVER CDN]/wc-pie-chart/dist/wc-pie-chart.min.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span>
 </pre>
     <p>Please remember to change <code>[WHATEVER CDN]</code> to your favourite <abbr title="Content Delivery Network">CDN</abbr></p>
     <h2>Examples</h2>
     <h3>Basic Example (my original colours)</h3>
-    <p>Each slice has a <code>label</code> attribute — this is included in the auto-generated <code>aria-label</code> read by screen readers.</p>
+    <p>Each slice has a <code>label</code> attribute - this is included in the auto-generated <code>aria-label</code> read by screen readers.</p>
     <pre><code>&lt;wc-pie-chart duration="3000"&gt;
   &lt;wc-pie-slice value="5" label="Red"  color="#E64C65"&gt;&lt;/wc-pie-slice&gt;
   &lt;wc-pie-slice value="5" label="Teal" color="#11A8AB"&gt;&lt;/wc-pie-slice&gt;
@@ -29,13 +31,12 @@
       <wc-pie-slice value="5" label="Teal" color="#11A8AB"/>
       <wc-pie-slice value="5" label="Navy" color="#394264"/>
     </wc-pie-chart>
-    <h3>This has its attributes changed via JS in an external file.</h3>
-    <p>In one case we increase the thickness to <code>0.5</code> to create a pie-chart, rather than a donut-chart.</p>
+    <h3>Attributes changed dynamically via JavaScript</h3>
+    <p>The chart below has its <code>width</code>, <code>thickness</code>, <code>duration</code>, and <code>delay</code> attributes changed at intervals by an external script. At one point <code>thickness="0.5"</code> is set, converting it from a donut-chart into a pie-chart.</p>
     <wc-pie-chart id="existing" thickness="0.1">
-      <wc-pie-slice value="1"
-                    color="red"/>
-      <wc-pie-slice value="2"/>
-      <wc-pie-slice value="3"/>
+      <wc-pie-slice value="1" label="Red"    color="red"/>
+      <wc-pie-slice value="2" label="Green"/>
+      <wc-pie-slice value="3" label="Blue"/>
     </wc-pie-chart>
     <h3>Another basic example</h3>
     <wc-pie-chart width="500">
@@ -43,31 +44,52 @@
       <wc-pie-slice value="1.5" label="Green" color="green"/>
       <wc-pie-slice value="6"   label="Blue"  color="blue"/>
     </wc-pie-chart>
-    <h3>This is an empty div which is populated with this script:</h3>
-    <pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#800000; font-weight:bold; '>test</span> <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>test</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
-<span style='color:#800000; font-weight:bold; '>const</span> segments <span style='color:#808030; '>=</span> <span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>floor</span><span style='color:#808030; '>(</span><span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>random</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>*</span> <span style='color:#008c00; '>10</span><span style='color:#808030; '>)</span> <span style='color:#808030; '>+</span> <span style='color:#008c00; '>5</span><span style='color:#800080; '>;</span>
-<span style='color:#800000; font-weight:bold; '>const</span> newPieChart <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>wc-pie-chart</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
-newPieChart<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>width</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>500</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
-<span style='color:#800000; font-weight:bold; '>for</span><span style='color:#808030; '>(</span><span style='color:#800000; font-weight:bold; '>let</span> i <span style='color:#808030; '>=</span> <span style='color:#008c00; '>0</span><span style='color:#800080; '>;</span> i <span style='color:#808030; '>&lt;</span> segments<span style='color:#800080; '>;</span> i<span style='color:#808030; '>++</span><span style='color:#808030; '>)</span><span style='color:#800080; '>{</span>
-  <span style='color:#800000; font-weight:bold; '>const</span> newPieSlice <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>wc-pie-slice</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
-  newPieSlice<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>value</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>`</span><span style='color:#800000; '>${</span><span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>floor</span><span style='color:#808030; '>(</span><span style='color:#797997; '>Math</span><span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>random</span><span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#797997; '> </span><span style='color:#808030; '>*</span><span style='color:#797997; '> </span><span style='color:#008c00; '>100</span><span style='color:#808030; '>)</span><span style='color:#797997; '> </span><span style='color:#808030; '>+</span><span style='color:#797997; '> </span><span style='color:#008c00; '>1</span><span style='color:#800000; '>}</span><span style='color:#800000; '>`</span><span style='color:#808030; '>)</span>
-  newPieChart<span style='color:#808030; '>.</span>append<span style='color:#808030; '>(</span>newPieSlice<span style='color:#808030; '>)</span>
+    <h3>Dynamically created chart</h3>
+    <p>This chart is built entirely in JavaScript and appended to an empty container. Refresh the page to see a different random layout.</p>
+    <h4>Script</h4>
+    <pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> <span style='color:#800000; font-weight:bold; '>test</span> <span style='color:#666600;'>=</span> document<span style='color:#666600;'>.</span>getElementById<span style='color:#666600;'>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>test</span><span style='color:#800000; '>'</span><span style='color:#666600;'>)</span>
+<span style='color:#800000; font-weight:bold; '>const</span> segments <span style='color:#666600;'>=</span> <span style='color:#555577;'>Math</span><span style='color:#666600;'>.</span><span style='color:#800000; font-weight:bold; '>floor</span><span style='color:#666600;'>(</span><span style='color:#555577;'>Math</span><span style='color:#666600;'>.</span><span style='color:#800000; font-weight:bold; '>random</span><span style='color:#666600;'>(</span><span style='color:#666600;'>)</span> <span style='color:#666600;'>*</span> <span style='color:#006600;'>10</span><span style='color:#666600;'>)</span> <span style='color:#666600;'>+</span> <span style='color:#006600;'>5</span><span style='color:#800080; '>;</span>
+<span style='color:#800000; font-weight:bold; '>const</span> newPieChart <span style='color:#666600;'>=</span> document<span style='color:#666600;'>.</span>createElement<span style='color:#666600;'>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>wc-pie-chart</span><span style='color:#800000; '>'</span><span style='color:#666600;'>)</span>
+newPieChart<span style='color:#666600;'>.</span>setAttribute<span style='color:#666600;'>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>width</span><span style='color:#800000; '>'</span><span style='color:#666600;'>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>500</span><span style='color:#800000; '>'</span><span style='color:#666600;'>)</span>
+<span style='color:#800000; font-weight:bold; '>for</span><span style='color:#666600;'>(</span><span style='color:#800000; font-weight:bold; '>let</span> i <span style='color:#666600;'>=</span> <span style='color:#006600;'>0</span><span style='color:#800080; '>;</span> i <span style='color:#666600;'>&lt;</span> segments<span style='color:#800080; '>;</span> i<span style='color:#666600;'>++</span><span style='color:#666600;'>)</span><span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>const</span> newPieSlice <span style='color:#666600;'>=</span> document<span style='color:#666600;'>.</span>createElement<span style='color:#666600;'>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>wc-pie-slice</span><span style='color:#800000; '>'</span><span style='color:#666600;'>)</span>
+  newPieSlice<span style='color:#666600;'>.</span>setAttribute<span style='color:#666600;'>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>value</span><span style='color:#800000; '>'</span><span style='color:#666600;'>,</span> <span style='color:#800000; '>`</span><span style='color:#800000; '>${</span><span style='color:#555577;'>Math</span><span style='color:#666600;'>.</span><span style='color:#800000; font-weight:bold; '>floor</span><span style='color:#666600;'>(</span><span style='color:#555577;'>Math</span><span style='color:#666600;'>.</span><span style='color:#800000; font-weight:bold; '>random</span><span style='color:#666600;'>(</span><span style='color:#666600;'>)</span><span style='color:#555577;'> </span><span style='color:#666600;'>*</span><span style='color:#555577;'> </span><span style='color:#006600;'>100</span><span style='color:#666600;'>)</span><span style='color:#555577;'> </span><span style='color:#666600;'>+</span><span style='color:#555577;'> </span><span style='color:#006600;'>1</span><span style='color:#800000; '>}</span><span style='color:#800000; '>`</span><span style='color:#666600;'>)</span>
+  newPieChart<span style='color:#666600;'>.</span>append<span style='color:#666600;'>(</span>newPieSlice<span style='color:#666600;'>)</span>
 <span style='color:#800080; '>}</span>
-<span style='color:#800000; font-weight:bold; '>test</span><span style='color:#808030; '>.</span>append<span style='color:#808030; '>(</span>newPieChart<span style='color:#808030; '>)</span>
+<span style='color:#800000; font-weight:bold; '>test</span><span style='color:#666600;'>.</span>append<span style='color:#666600;'>(</span>newPieChart<span style='color:#666600;'>)</span>
 </pre>
-    <p>If you refresh the page, it should change.</p>
     <div id="test"></div>
-    <h3>This is just me playing with grayscale colours.</h3>
-    <p>The greys are in an array, this script populates the donut-chart with the greys:</p>
-    <pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> greyChart <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>getElementById<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>grey</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
-greys<span style='color:#808030; '>.</span><span style='color:#800000; font-weight:bold; '>forEach</span><span style='color:#808030; '>(</span>grey <span style='color:#808030; '>=</span><span style='color:#808030; '>></span> <span style='color:#800080; '>{</span>
-  <span style='color:#800000; font-weight:bold; '>const</span> newPieSlice <span style='color:#808030; '>=</span> document<span style='color:#808030; '>.</span>createElement<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>wc-pie-slice</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span>
-  newPieSlice<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>value</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>`</span><span style='color:#0000e6; '>1</span><span style='color:#800000; '>`</span><span style='color:#808030; '>)</span>
-  newPieSlice<span style='color:#808030; '>.</span>setAttribute<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>color</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> grey<span style='color:#808030; '>)</span>
-  greyChart<span style='color:#808030; '>.</span>append<span style='color:#808030; '>(</span>newPieSlice<span style='color:#808030; '>)</span>
-<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
+    <h3>Grayscale stress test</h3>
+    <p>39 equal-value slices in shades of grey, populated via JavaScript:</p>
+    <pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>const</span> greyChart <span style='color:#666600;'>=</span> document<span style='color:#666600;'>.</span>getElementById<span style='color:#666600;'>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>grey</span><span style='color:#800000; '>'</span><span style='color:#666600;'>)</span>
+greys<span style='color:#666600;'>.</span><span style='color:#800000; font-weight:bold; '>forEach</span><span style='color:#666600;'>(</span>grey <span style='color:#666600;'>=</span><span style='color:#666600;'>></span> <span style='color:#800080; '>{</span>
+  <span style='color:#800000; font-weight:bold; '>const</span> newPieSlice <span style='color:#666600;'>=</span> document<span style='color:#666600;'>.</span>createElement<span style='color:#666600;'>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>wc-pie-slice</span><span style='color:#800000; '>'</span><span style='color:#666600;'>)</span>
+  newPieSlice<span style='color:#666600;'>.</span>setAttribute<span style='color:#666600;'>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>value</span><span style='color:#800000; '>'</span><span style='color:#666600;'>,</span> <span style='color:#800000; '>`</span><span style='color:#0000e6; '>1</span><span style='color:#800000; '>`</span><span style='color:#666600;'>)</span>
+  newPieSlice<span style='color:#666600;'>.</span>setAttribute<span style='color:#666600;'>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>color</span><span style='color:#800000; '>'</span><span style='color:#666600;'>,</span> grey<span style='color:#666600;'>)</span>
+  greyChart<span style='color:#666600;'>.</span>append<span style='color:#666600;'>(</span>newPieSlice<span style='color:#666600;'>)</span>
+<span style='color:#800080; '>}</span><span style='color:#666600;'>)</span>
 </pre>
     <wc-pie-chart id="grey"></wc-pie-chart>
+    <h2>Patterns</h2>
+    <p>Add a <code>pattern</code> attribute to any <code>&lt;wc-pie-slice&gt;</code> to overlay a texture on that slice. Available values: <code>stripes</code>, <code>dots</code>, <code>crosshatch</code>. Patterns help distinguish slices without relying on colour alone.</p>
+    <pre><code>&lt;wc-pie-chart width="200"&gt;
+  &lt;wc-pie-slice value="4" label="Stripes"    color="#E64C65" pattern="stripes"&gt;&lt;/wc-pie-slice&gt;
+  &lt;wc-pie-slice value="4" label="Dots"       color="#11A8AB" pattern="dots"&gt;&lt;/wc-pie-slice&gt;
+  &lt;wc-pie-slice value="4" label="Crosshatch" color="#394264" pattern="crosshatch"&gt;&lt;/wc-pie-slice&gt;
+  &lt;wc-pie-slice value="4" label="Solid"      color="#F5A623"&gt;&lt;/wc-pie-slice&gt;
+&lt;/wc-pie-chart&gt;</code></pre>
+    <wc-pie-chart width="200">
+      <wc-pie-slice value="4" label="Stripes"    color="#E64C65" pattern="stripes"/>
+      <wc-pie-slice value="4" label="Dots"       color="#11A8AB" pattern="dots"/>
+      <wc-pie-slice value="4" label="Crosshatch" color="#394264" pattern="crosshatch"/>
+      <wc-pie-slice value="4" label="Solid"      color="#F5A623"/>
+    </wc-pie-chart>
+    <h3>Patterns on a pie chart (<code>thickness="0.5"</code>)</h3>
+    <wc-pie-chart width="200" thickness="0.5">
+      <wc-pie-slice value="3" label="Stripes"    color="#E64C65" pattern="stripes"/>
+      <wc-pie-slice value="5" label="Dots"       color="#11A8AB" pattern="dots"/>
+      <wc-pie-slice value="4" label="Crosshatch" color="#394264" pattern="crosshatch"/>
+    </wc-pie-chart>
     <h2>Accessibility</h2>
     <h3>Auto-generated <code>aria-label</code></h3>
     <p>
@@ -97,6 +119,7 @@ greys<span style='color:#808030; '>.</span><span style='color:#800000; font-weig
       <wc-pie-slice value="31" label="Dogs"  color="#11A8AB"/>
       <wc-pie-slice value="27" label="Other" color="#394264"/>
     </wc-pie-chart>
+  </main>
 <!--    <script type="module" src="https://unpkg.com/wc-pie-chart/wc-pie-chart.js"></script>-->
     <script type="module" src="./wc-pie-chart.js"></script>
 <!--    <script type="module" src="https://cdn.skypack.dev/wc-pie-chart/wc-pie-chart.js"></script>-->
